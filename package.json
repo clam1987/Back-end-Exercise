@@ -1,0 +1,27 @@
+{
+  "name": "Back-end-Exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clam1987/Back-end-Exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clam1987/Back-end-Exercise/issues"
+  },
+  "homepage": "https://github.com/clam1987/Back-end-Exercise#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "kill-port": "^1.6.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2"
+  }
+}
