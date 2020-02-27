@@ -50,8 +50,28 @@ $("#add-coder").on("click", function(event) {
 
     // Send the PUT request.
     $.ajax("/api/edit/" + id, {
-      method: "POST",
+      method: "PUT",
       data: updatedInfo
+    }).then(
+      function() {
+        console.log("updated info");
+        // Reload the page to get the updated list
+        location.assign("/");
+      }
+    );
+  });
+
+  $(".deleteButton").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+    let id = $(this).val();
+
+
+
+    // Send the PUT request.
+    $.ajax("/api/delete/" + id, {
+      method: "DELETE",
+      data: id
     }).then(
       function() {
         console.log("updated info");

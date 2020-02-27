@@ -28,7 +28,7 @@ router.post("/add", (req, res) => {
     })
 });
 
-router.post("/edit/:id", (req, res) => {
+router.put("/edit/:id", (req, res) => {
     let id = req.params.id;
     console.log(id)
     let first_name = req.body.first_name;
@@ -43,6 +43,18 @@ router.post("/edit/:id", (req, res) => {
             return res.status(500).send(err);
         }
         return res.redirect("/");
+    })
+});
+
+router.delete("/delete/:id", (req, res) => {
+    let id = req.params.id;
+    let deleteUserQuery = 'DELETE FROM coders WHERE id = "' + id + '"';
+
+    db.query(deleteUserQuery, (err, result) => {
+        if(err) {
+            return res.status(500).send(err);
+        }
+        res.redirect("/")
     })
 })
 

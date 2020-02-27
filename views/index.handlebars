@@ -25,7 +25,7 @@
                             <td>{{this.user_name}}</td>
                             <td>
                                 <a href="/edit/{{this.id}}" target="_blank" rel="noopener" class="btn btn-sm btn-success" data-value="{{this.id}}">Edit</a>
-                                <a href="/delete/{{this.id}}" class="btn btn-sm btn-danger">Delete</a>
+                                <button type="button" class="btn btn-sm btn-danger deleteButton" value="{{this.id}}">Delete</a>
                             </td>
                         </tr>
                     {{/each}}
