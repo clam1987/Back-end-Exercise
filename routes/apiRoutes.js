@@ -18,14 +18,14 @@ router.post("/add", (req, res) => {
             let query = "INSERT INTO `coders` (first_name, last_name, language, frameworks, user_name) VALUES ('" +
             first_name + "', '" + last_name + "', '" + languages + "', '" + frameworks + "', '" + user_name + "')";
             db.query(query, (err, result) => {
-                console.log(result);
+                // console.log(result);
                 if (err) {
                     return res.status(500).send(err);
                 }
-                return res.redirect("/");
             })
         }
     })
+    res.json(true);
 });
 
 router.put("/edit/:id", (req, res) => {
@@ -37,13 +37,12 @@ router.put("/edit/:id", (req, res) => {
     let frameworks = req.body.frameworks;
 
     let query = "UPDATE `coders` SET `first_name` = '" + first_name + "', `last_name` = '" + last_name + "', `language` = '" + language + "', `frameworks` = '" + frameworks + "' WHERE `coders`.`id` = " + id + "";
-    console.log(query);
     db.query(query, (err, result) => {
         if (err) {
             return res.status(500).send(err);
         }
-        return res.redirect("/");
     })
+    return res.json(true)
 });
 
 router.delete("/delete/:id", (req, res) => {
@@ -54,8 +53,8 @@ router.delete("/delete/:id", (req, res) => {
         if(err) {
             return res.status(500).send(err);
         }
-        res.redirect("/")
     })
+    return res.json(true);
 })
 
 module.exports = router;

@@ -13,7 +13,7 @@ first_name VARCHAR(40) NOT NULL,
 last_name VARCHAR(40) NOT NULL,
 language VARCHAR(40) NOT NULL,
 frameworks VARCHAR(40) NOT NULL,
-image VARCHAR(40) NOT NULL,
+image VARCHAR(40),
 user_name VARCHAR(20) NOT NULL,
 PRIMARY KEY(id)
 );

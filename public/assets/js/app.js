@@ -25,7 +25,7 @@ $("#add-coder").on("click", function(event) {
       function() {
         console.log("created new coder");
         // Reload the page to get the updated list
-        location.reload();
+        return window.location = "/"
       }
     );
   });
@@ -56,7 +56,7 @@ $("#add-coder").on("click", function(event) {
       function() {
         console.log("updated info");
         // Reload the page to get the updated list
-        location.assign("/");
+        return window.location = "/";
       }
     );
   });
@@ -76,7 +76,7 @@ $("#add-coder").on("click", function(event) {
       function() {
         console.log("updated info");
         // Reload the page to get the updated list
-        location.assign("/");
+        return window.location = "/";
       }
     );
   });
