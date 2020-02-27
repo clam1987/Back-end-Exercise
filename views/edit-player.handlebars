@@ -1,0 +1,48 @@
+
+<div class="container">
+        <p class="text-center text-danger"></p>
+
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" value="">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" value="" title="Username cannot be edited.">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                       <label for="position">Frameworks</label>
+                    <select id="framework" name="position" class="form-control">
+                      <option>React</option>
+                        <option>Handlebars</option>
+                        <option>EJS</option>
+                        <option>HTML</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Languages</label>
+                    <select id="language" name="position" class="form-control">
+                      <option>JavaScript</option>
+                        <option>C++</option>
+                        <option>Python</option>
+                        <option>Java</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success float-right" id="update-coder" value="{{data}}">Update Coder</button>
+        </form>
+        {{#if playerFound}}
+        <p class="text-center">If No Coders Found. Go <a href="/add">here</a> to add coder.</p>
+        {{/if}}
+</div>
+</div>
+</body>
+</html>

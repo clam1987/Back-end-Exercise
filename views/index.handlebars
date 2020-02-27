@@ -1,0 +1,40 @@
+<p style="font-size: 32px; font-weight:bold; text-align: center;">Welcome to Coders App</p>
+    <div class="table-wrapper">
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Language</th>
+                        <th scope="col">Framework</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each coder}}
+                     <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td><img src="/assets/img/" + {{this.image}} class="rounded-circle player-img" alt={{this.id}}></td>
+                            <td>{{this.first_name}}</td>
+                            <td>{{this.last_name}}</td>
+                            <td>{{this.language}}</td>
+                            <td>{{this.frameworks}}</td>
+                            <td>{{this.user_name}}</td>
+                            <td>
+                                <a href="/edit/{{this.id}}" target="_blank" rel="noopener" class="btn btn-sm btn-success" data-value="{{this.id}}">Edit</a>
+                                <a href="/delete/{{this.id}}" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{#if noPlayer}}
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+            {{/if}}
+    </div>
+</div>
+</body>
+</html>
